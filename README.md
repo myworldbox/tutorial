@@ -2,7 +2,7 @@
 
 Author - myworldbox
 
-<span style="color: red;">all tutorial notes related coding.</span>
+<span style="color: red;">All tutorial notes related coding.</span>
 
 <span style="color: blue;">These codes are remarkably well-designed.</span>
                                                                  

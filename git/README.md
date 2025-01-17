@@ -1,5 +1,5 @@
-# tutorial -> Git
-all tutorial notes related to Git
+# Git
+All tutorial notes related to Git
 
 ## Discard commits
 ```bash
@@ -48,6 +48,22 @@ git reset -m HEAD~n
 6. git push --force-with-lease
 ```
 
+## Squash all commits into one commit
+```bash
+# Create a Temporary Branch: Create a temporary branch from your current branch.
+1. git checkout -b temp-branch
+
+# Reset to the First Commit: Reset this new branch to the first commit.
+2. git reset --soft $(git rev-list --max-parents=0 HEAD)
+
+# Commit All Changes: Stage all changes and create a new commit.
+3. git add --all
+4. git commit -m "Squashed all commits into one"
+
+# Force Push (if necessary): If you've already pushed the original branch to a remote repository, you'll need to force push the new branch.
+5. git push --force-with-lease origin temp-branch:main
+```
+
 ## Cherry picking multiple commits into another branch
 ```bash
 # Checkout the Target Branch: Switch to the branch where you want to apply the commits.
@@ -61,4 +77,5 @@ git reset -m HEAD~n
 3. git cherry-pick --continue
 
 # Commit the Changes: If there are no conflicts, the commits will be applied to the target branch.
+4. git push
 ```
